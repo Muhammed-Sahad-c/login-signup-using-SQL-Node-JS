@@ -12,14 +12,20 @@ router.get('/', (req, res, next) => {
 })
 
 
-router.post('/login',async (req, res, next) => {
-  
-  res.json(true)
-  // const loggin = await helper.loginValidation(email,password);
+router.post('/login', async (req, res, next) => {
+  const email = req.body.mail;
+  const password = req.body.password;
+  const loggin = await helper.loginValidation(email, password);
+  console.log(loggin)
+  if (loggin == true) {
+    res.json(true)
+  } else {
+    res.json(false)
+  }
 })
 
 
- 
 
- 
+
+
 module.exports = router;

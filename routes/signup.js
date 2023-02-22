@@ -6,7 +6,6 @@ const helper = require('../model/helper')
 
 
 router.get('/signup', (req, res, next) => {
-  console.log('sahad');
   res.render('../views/signup.hbs', { title: 'Sign UP' })
 })
 

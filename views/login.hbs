@@ -35,7 +35,7 @@
                             </div>
                             <p id="information">Email or Password is incorrect!</p>
                             <!-- Submit button -->
-                            <button class="btn btn-primary btn-block mb-4" onclick="test()">
+                            <button class="btn btn-primary btn-block mb-4" onclick="loginVerification()">
                                 Login
                             </button>
 
@@ -49,20 +49,29 @@
 </section>
 
 
-<button onclick="test()"> lksajdflkasd;lfkjasd;ljkfl;aksdjfl;kas</button>
-
 <script>
 
-    const test = () => {
+
+    const loginVerification = () => {
+        const mail = $('#form3Example3').val();
+        const password = $('#form3Example4').val()
+        alert(password)
         $.ajax({
             url: '/login',
             method: 'post',
-            
+            data: {
+                mail, password
+            },
             success: (result) => {
+           
+            
                 if (result == true) {
-                    window.location.replace('/signup')
+                    window.location.replace('/home')
+                    
                 } else {
-                    alert(result)
+                    window.location.replace('/')
+                    $('#information').show();
+                    
                 }
             },
         })

@@ -40,8 +40,9 @@ module.exports = {
                         resolve(true)
                     }
                 } else {
-                    console.log(err)
+                   resolve(false)
                 }
+                
             })
         })
     },

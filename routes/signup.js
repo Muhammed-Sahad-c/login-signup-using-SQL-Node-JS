@@ -20,4 +20,9 @@ router.post('/signupData', async (req, res, next) => {
    
 
 })
+
+
+router.get('/home',(req,res,next)=>{
+  res.render('../views/home.hbs');
+})
 module.exports = router;

@@ -15,3 +15,8 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+
+
+// ajax API Calls
+
+

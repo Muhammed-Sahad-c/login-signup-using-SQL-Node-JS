@@ -43,3 +43,11 @@ body {
  backdrop-filter: saturate(113%) blur(5px);
  border-radius: 5px;
 }
+
+
+
+#information{
+  color: red;
+  display: none;
+  font-weight: 600;
+}

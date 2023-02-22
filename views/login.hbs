@@ -33,9 +33,9 @@
                                 <input type="password" id="form3Example4" class="form-control" name="login_password" required />
                                 <label class="form-label text-white" for="form3Example4">Password</label>
                             </div>
-
+                            <p id="information">Email or Password is incorrect!</p>
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                            <button class="btn btn-primary btn-block mb-4" onclick="test()">
                                 Login
                             </button>
 
@@ -47,4 +47,24 @@
         </div>
     </div>
 </section>
-<!-- Section: Design Block -->
+
+
+<button onclick="test()"> lksajdflkasd;lfkjasd;ljkfl;aksdjfl;kas</button>
+
+<script>
+
+    const test = () => {
+        $.ajax({
+            url: '/login',
+            method: 'post',
+            
+            success: (result) => {
+                if (result == true) {
+                    window.location.replace('/signup')
+                } else {
+                    alert(result)
+                }
+            },
+        })
+    }
+</script>

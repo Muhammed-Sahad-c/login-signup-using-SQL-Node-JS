@@ -4,14 +4,11 @@
         <div class="row gx-lg-5 align-items-center mb-5">
             <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                 <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                    The best offer <br />
+                    Lorem ipsum dolor sit. <br />
                     <span style="color: hsl(218, 81%, 75%)">for your business</span>
                 </h1>
                 <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Temporibus, expedita iusto veniam atque, magni tempora mollitia
-                    dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-                    ab ipsum nisi dolorem modi. Quos?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, suscipit.
                 </p>
             </div>
 
@@ -20,7 +17,7 @@
 
                 <div class="card bg-glass">
                     <div class="card-body px-4 py-5 px-md-5">
-                        <form action="/signupData" method="post">
+                        {{!-- <form action="/signupData" method="post"> --}}
                             <!-- 2 column grid layout with text inputs for the first and last names -->
                             <h1 class="pb-3 text-uppercase text-white">sign up</h1>
                             <!-- Email input -->
@@ -34,17 +31,18 @@
                                 <label class="form-label text-white" for="form3Example4">Password</label>
                             </div>
                             <div class="form-outline mb-4">
-                                <input type="password" id="form3Example4" class="form-control" name="signupre_password" required />
+                                <input type="password" id="form3Example5" class="form-control" name="signupre_password" required />
                                 <label class="form-label text-white" for="form3Example4">Re Enter Password</label>
                             </div>
                             <p id="information">Email or Password is incorrect!</p>
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4">
-                                Login
+                            <button type="button" class="btn btn-primary btn-block mb-4" onclick="signupValidation()">
+                                Sign Up
                             </button>
 
-                            <p class="text-white">don't hava an account? <a href="/signup">Signup</a></p>
-                        </form>
+                            <p class="text-white">don't hava an account? <a href="/">Log In</a></p>
+                            {{!--
+                        </form> --}}
                     </div>
                 </div>
             </div>
@@ -55,3 +53,39 @@
 
 
 
+
+<script>
+    const signupValidation = () => {
+        const mail = $('#form3Example3').val()
+        const password = $('#form3Example4').val()
+        const repassword = $('#form3Example5').val()
+
+        if (mail == '' || password == '' || repassword == '') {
+            $('#form3Example4').css({ 'border': '1px solid red' })
+            $('#form3Example3').css({ 'border': '1px solid red' })
+            $('#form3Example5').css({ 'border': '1px solid red' })
+        } else {
+            if (password != repassword) {
+                $('#form3Example4').css({ 'border': '1px solid red' })
+                $('#form3Example5').css({ 'border': '1px solid red' })
+            } else {
+                $.ajax({
+                    url: '/signupData',
+                    data: {
+                        mail, password, repassword
+                    },
+                    method: 'post',
+                    success: (response) => {
+                        if (response == true) {
+                            window.location.replace('/home');
+                        } else {
+                            $('#form3Example4').css({ 'border': '1px solid red' })
+                            $('#form3Example5').css({ 'border': '1px solid red' })
+                            $('#form3Example3').css({ 'border': '1px solid red' })
+                        }
+                    }
+                })
+            }
+        }
+    }
+</script>

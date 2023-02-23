@@ -1,53 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
-*{
+* {
   margin: 0%;
- 
-
 }
 body {
   height: 100vh;
-  
+
   padding: 0%;
-  font-family: 'Ubuntu', sans-serif;  
+  font-family: "Ubuntu", sans-serif;
 }
 
- 
-
 .background-radial-gradient {
-  background-image: url('/images/594305.jpg');
+  background-image: url("/images/594305.jpg");
   background-size: 100%;
 }
 
 #radius-shape-1 {
- height: 220px;
- width: 220px;
- top: -60px;
- left: -130px;
- background: radial-gradient(#44006b, #ad1fff);
- overflow: hidden;
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
 }
 
 #radius-shape-2 {
- border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
- bottom: -60px;
- right: -110px;
- width: 300px;
- height: 300px;
- background: radial-gradient(#44006b, #ad1fff);
- overflow: hidden;
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
 }
 
 .bg-glass {
- background-color: hsl(0deg 0% 0% / 28%) !important;
- backdrop-filter: saturate(113%) blur(5px);
- border-radius: 5px;
+  background-color: hsl(0deg 0% 0% / 28%) !important;
+  backdrop-filter: saturate(113%) blur(5px);
+  border-radius: 5px;
 }
 
-
-
-#information{
+#information {
   color: red;
   display: none;
   font-weight: 600;
+}
+
+/* HOME PAGE */
+
+#homeouter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+#space {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80");
 }

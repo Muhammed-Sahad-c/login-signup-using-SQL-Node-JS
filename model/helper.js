@@ -33,19 +33,23 @@ module.exports = {
     loginValidation: (mail, password) => {
         return new Promise((resolve, reject) => {
             db.connection.query(`SELECT * FROM user_data WHERE email = '${mail}' AND password = '${password}'`, (err, data, field) => {
-                if (!err) {
-                    if (data.length == 0) {
+                if(err){
+                    resolve(false)
+                }else{
+                   if(data.length == 0){
+                    resolve(false)
+                    return;
+                   }else{
+                    if(data.length == 0){
                         resolve(false)
-                    } else {
+                    }else{
                         resolve(true)
                     }
-                } else {
-                   resolve(false)
+                   }
                 }
-                
             })
         })
-    },
+    }, 
 
 
 }

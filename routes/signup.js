@@ -11,17 +11,16 @@ router.get('/signup', (req, res, next) => {
 
 
 router.post('/signupData', async (req, res, next) => {
-  const mail = req.body.signup_email;
-  const password = req.body.signup_password;
-  const repassword = req.body.signupre_password;
+  const mail = req.body.mail;
+  const password = req.body.password;
+  const repassword = req.body.repassword;
 
   const data = await helper.signupDataHandling(mail, password, repassword);
-   
-
+  res.json(data);
 })
 
 
-router.get('/home',(req,res,next)=>{
+router.get('/home', (req, res, next) => {
   res.render('../views/home.hbs');
 })
 module.exports = router;
